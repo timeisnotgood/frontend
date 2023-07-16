@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Rendering from './Rendering';
+// import store from './Redux/store'
+// import Header from './containers/Header'
+// import Productdetail from './containers/productdetail';
+// import ProductList from './containers/productList';
 
-function App() {
+
+
+export default function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Rendering/>
     </div>
-  );
+  )
+  
 }
 
-export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <div>
+//       <BrowserRouter>
+//       <Header/>
+//         <Routes>
+//           <Route path='/product/:productId' exact element={<Productdetail/>} />
+//           <Route path='/list' exact element={<ProductList/>} />
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
