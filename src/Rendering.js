@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 const Rendering = () => {
 
  
- const [data, setdata] = useState()
+ const [data, setdata] = useState([])
  const [term, setterm] = useState()
 
  useEffect(()=>{
@@ -15,22 +15,13 @@ const Rendering = () => {
    Rendering()
  },[])
 
-
- const list = data.map(user =>{
-  const {id, name, username} = user
-  return(
-    <div>
-      <p key={id} > {name} </p>
-    </div>
+ const list = data.map( per =>
+  <p key={per.id} >{per.name}</p>
   )
- })
-
-
-
   return (
     <div>
-    <input type='text' value={term} onChange={(e)=>{setterm(e.target.value)}} />
-    {list}
+      <input type='text' value={term} onChange={(e)=>{setterm(e.target.value)}} />
+      {list}
     </div>
   )
 }
