@@ -7,15 +7,26 @@ import Rendering from './Rendering';
 // import Header from './containers/Header'
 // import Productdetail from './containers/productdetail';
 // import ProductList from './containers/productList';
+import LoginButton from './auth/LoginButton';
+import LogoutButton from './auth/LogoutButton';
+import { User, useAuth0 } from '@auth0/auth0-react';
+
+
 
 
 
 export default function App() {
 
+  const { loginWithPopup, loginWithRedirect, logout, user, isAuthenticated } = useAuth0()
 
   return (
     <div>
-      <Rendering/>
+    <button onClick={loginWithPopup} >Login wiht popup</button>
+    <button onClick={loginWithRedirect} >Login wiht Redirect</button>
+    <button onClick={logout} >Logout</button>
+
+    <p> user is  {isAuthenticated ? " logged in " : "not logged in"}</p>
+    <p>{JSON.stringify(user, null, 2)}</p>
     </div>
   )
   
