@@ -17,6 +17,19 @@ import { User, useAuth0 } from '@auth0/auth0-react';
 
 export default function App() {
 
+  const newe = new Promise((resolve, reject) => {
+    setTimeout(()=>{
+      resolve("Uumbu")
+    }, 1000)
+  })
+
+  const nn = async () =>{
+    const data = await newe
+    console.log(data);
+  }
+
+  nn()
+
   const { loginWithPopup, loginWithRedirect, logout, user, isAuthenticated } = useAuth0()
 
   return (
