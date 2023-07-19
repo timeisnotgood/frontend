@@ -1,29 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React, { Component } from 'react'
 
-const Rendering = () => {
+export class Rendering extends Component {
 
- 
- const [data, setdata] = useState([])
- const [term, setterm] = useState()
+  constructor(){
+    super()
 
- useEffect(()=>{
-  async function Rendering() {
-    const user = await fetch('https://jsonplaceholder.typicode.com/users')
-    const json = await user.json()
-    setdata(json)
-   }
-   Rendering()
- },[])
+    this.state = ({
+      count : 0
+    })
+  }
 
- const list = data.map( per =>
-  <p key={per.id} >{per.name}</p>
-  )
-  return (
-    <div>
-      <input type='text' value={term} onChange={(e)=>{setterm(e.target.value)}} />
-      {list}
-    </div>
-  )
+  increment = () =>{
+    this.setState(prev => {
+      return {count : prev.count + 1}
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        {this.props.render(this.state.count, this.increment)}
+      </div>
+    )
+  }
 }
 
 export default Rendering

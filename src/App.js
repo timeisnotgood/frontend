@@ -10,36 +10,18 @@ import Rendering from './Rendering';
 import LoginButton from './auth/LoginButton';
 import LogoutButton from './auth/LogoutButton';
 import { User, useAuth0 } from '@auth0/auth0-react';
-
+import Clickincre from './claccomp/Clickincre';
+import Hoverinc from './claccomp/Hoverinc';
 
 
 
 
 export default function App() {
 
-  const newe = new Promise((resolve, reject) => {
-    setTimeout(()=>{
-      resolve("Uumbu")
-    }, 1000)
-  })
-
-  const nn = async () =>{
-    const data = await newe
-    console.log(data);
-  }
-
-  nn()
-
-  const { loginWithPopup, loginWithRedirect, logout, user, isAuthenticated } = useAuth0()
-
   return (
     <div>
-    <button onClick={loginWithPopup} >Login wiht popup</button>
-    <button onClick={loginWithRedirect} >Login wiht Redirect</button>
-    <button onClick={logout} >Logout</button>
-
-    <p> user is  {isAuthenticated ? " logged in " : "not logged in"}</p>
-    <p>{JSON.stringify(user, null, 2)}</p>
+    <Rendering render = {(count, increment) => <Clickincre count={count} increment={increment} />} />
+    <Rendering render = {(count, increment) => <Hoverinc count={count} increment={increment} />} />
     </div>
   )
   
