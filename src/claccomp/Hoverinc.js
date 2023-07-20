@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 export class Hoverinc extends Component {
     render() {
-        const {count, increment} = this.props
+        const {count, incre} = this.props
         return (
-            <button onMouseOver={increment} >{count}</button>
+            <p onMouseOver={incre} >{count}</p>
         )
       }
 }

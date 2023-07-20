@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Register from './pages/Register';
 import Login from './pages/Login';
-import Rendering from './Rendering';
+import {Rendering} from './Rendering';
 // import store from './Redux/store'
 // import Header from './containers/Header'
 // import Productdetail from './containers/productdetail';
@@ -20,8 +20,11 @@ export default function App() {
 
   return (
     <div>
-    <Rendering render = {(count, increment) => <Clickincre count={count} increment={increment} />} />
-    <Rendering render = {(count, increment) => <Hoverinc count={count} increment={increment} />} />
+      <Rendering func={(count, incre) => 
+      <Clickincre count={count} incre={incre} />} />
+
+      <Rendering func={(count, incre) => 
+      <Hoverinc count={count} incre={incre} />} />
     </div>
   )
   
