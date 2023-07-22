@@ -1,27 +1,14 @@
-import { Component } from "react";
-import Clickincre from "./claccomp/Clickincre";
-import Hoverinc from "./claccomp/Hoverinc";
+import React, { Component } from 'react'
 
-export class Rendering extends Component{
-  constructor(){
-    super()
-    this.state = ({
-      count : 0
-    })
+const Rendering = Originalcomponent => {
+   class Newcomponent extends Component {
+    render() {
+      return <Originalcomponent name={"bhoopahti"} />
+    }
   }
 
-  incre = () =>{
-    this.setState(prev => {
-      return {count : prev.count + 1}
-    })
-  }
+  return Newcomponent
 
-  render(){
-    return(
-      <div>
-        {this.props.func(this.state.count, this.incre)}
-      </div>
-    )
-  }
 }
 
+export default Rendering
