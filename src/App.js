@@ -1,14 +1,11 @@
 import React from 'react'
-import Rendering from './Rendering'
-import Clickincre from './claccomp/Clickincre'
-
+import Context from './Context'
 
 export default function App() {
 
   return (
     <div>
-    <Clickincre/>
-    <p>hai</p>
+    <Context/>
     </div>
   )
   
