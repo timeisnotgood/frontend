@@ -1,43 +1,54 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
 const Context = () => {
 
-    const [detail, setdetail] = useState({
-        username : "",
-        email : "",
-        password : ""
-    })
-    const [data, setdata] = useState([])
+    const [todo, settodo] = useState('')
+    const [data, setdata] = useState(getdata())
 
-    const subhandler =(e)=>{
+    const handler = (e) => settodo(e.target.value)
+    const subhandler = (e) =>{
         e.preventDefault()
-        setdata([detail, ...data])
-        setdetail({username : " ", email:" ", password:" "})
-
-        localStorage.setItem("Reg detail", JSON.stringify(data))
-        console.log(data);
-
+        setdata([...data, todo])
+        settodo("")
     }
 
+    const localkey = "Todos"
 
-    const statehandler = (e) =>{
-        setdetail({...detail, [e.target.name]:e.target.value})
+    function getdata(){
+        const db = localStorage.getItem("Todos")
+
+        if(db){
+            return JSON.parse(localStorage.getItem("Todos"))
+        }else{
+            return []
+        }
     }
+    useEffect(()=>{
+         localStorage.setItem(localkey, JSON.stringify(data))
+    }, [data])
 
-  return (
-    <div>
-        <form onSubmit={subhandler} >
-            <lable>Username</lable>
-            <input type='text' value={detail.username} name='username' onChange={statehandler}   />
-            <lable>email</lable>
-            <input type='text' value={detail.email} name='email' onChange={statehandler}   />
-            <lable>password</lable>
-            <input type='text' value={detail.password} name='password' onChange={statehandler}   />
-            <button>Submit</button>
-        </form>
-        {JSON.stringify(data)}
-    </div>
-  )
+
+    const list = data.map((per,index) => (
+        <p key={index} >{per}
+            <button onClick={()=>{
+                data.filter( index =>
+                    per !== data
+                 )
+            }} >🚽</button>        
+        </p>
+    ))
+
+    return(
+        <div>
+            <form onSubmit={subhandler} >
+                <input type='text' placeholder='Enter Todos' name='todo' value={todo} onChange={handler} />
+                <button>Submit</button>
+            </form>
+            <div>
+                {list}
+            </div>
+        </div>
+    )
 }
 
 export default Context
