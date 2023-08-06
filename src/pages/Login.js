@@ -19,19 +19,16 @@ const Login = () => {
         setdata({email:"", password:""})
     
     
-        const response = await fetch('http://localhost:5000/second', {
-          method: 'POST',
-          headers: {
-            'Content-type' : 'application/json'
-          },
-          body: JSON.stringify(info)
+        const res = await fetch('http://localhost:5000/login',  {
+          method: 'GET',
+          // headers: {
+          //   'Content-type' : 'application/json'
+          // },
+          // body: JSON.stringify(info)
         })
-    
-    
-        const da = response.json()
-        da.then( data =>{
-          console.log(data);
-        })
+
+        const login = res
+        console.log(login);
     
       }
     

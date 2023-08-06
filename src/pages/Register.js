@@ -20,15 +20,15 @@ const Register = () => {
         setdata({name : "", email:"", password:""})
     
     
-        const response = await fetch('http://localhost:5000/first', {
+        const response = await fetch('http://localhost:5000/register', {
           method: 'POST',
           headers: {
             'Content-type' : 'application/json'
           },
-          body: JSON.stringify(info)
+          // body: JSON.stringify(info)
         })
-    
-    
+
+
         const da = response.json()
         da.then( data =>{
           console.log(data);
