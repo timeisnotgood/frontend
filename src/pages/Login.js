@@ -2,16 +2,16 @@ import React, { useState }  from 'react'
 
 const Login = () => {
 
-    const [data, setdata] = useState({
-        email : "",
-        password : ""
-      })
+    const [data, setdata] = useState({ email : "", password : ""})
       const [info, setinfo] = useState([])
     
       const datahandler = (e) =>{
         setdata({...data, [e.target.name]:e.target.value})
       }
     
+
+// Submit Handler
+
       const subhandler = async (e) =>{
     
         e.preventDefault()
@@ -19,20 +19,22 @@ const Login = () => {
         setdata({email:"", password:""})
     
     
-        const res = await fetch('http://localhost:5000/login',  {
-          method: 'GET',
-          // headers: {
-          //   'Content-type' : 'application/json'
-          // },
-          // body: JSON.stringify(info)
-        })
+        const res = await fetch('http://localhost:5000/login',{method: 'GET'})
+        const da = res.json()
+        da.then( data =>{
+          console.log(data);
+        } )
+      //   .then( data =>{
+      //     return data.json()
+      //   } ).then( data =>{
+      //     console.log(data);
+      //   } )
 
-        const login = res
-        console.log(login);
-    
       }
+
+
     
-    
+
       return (
         <div className="main" >
           <h4>Register Here</h4>

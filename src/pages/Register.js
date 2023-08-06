@@ -25,7 +25,7 @@ const Register = () => {
           headers: {
             'Content-type' : 'application/json'
           },
-          // body: JSON.stringify(info)
+          body: JSON.stringify(info)
         })
 
 
