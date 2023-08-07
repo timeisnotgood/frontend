@@ -17,18 +17,15 @@ const Login = () => {
         e.preventDefault()
         setinfo([...info, data])
         setdata({email:"", password:""})
+        console.log(info);
     
-    
-        const res = await fetch('http://localhost:5000/login',{method: 'GET'})
+        const res = await fetch('http://localhost:5000/login',{
+          method: 'GET',
+        })
         const da = res.json()
         da.then( data =>{
           console.log(data);
         } )
-      //   .then( data =>{
-      //     return data.json()
-      //   } ).then( data =>{
-      //     console.log(data);
-      //   } )
 
       }
 
