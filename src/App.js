@@ -1,23 +1,19 @@
-import { useState } from "react"
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
-import Context from "./Context"
+import Contacts from "./pages/Contacts"
+
 export default function App() {
   return(
     <div>
-      {/* <h2>Home page</h2>
-      <Link to={"/Login"}>
-        <button>Login</button>
-      </Link>
-      
+      <h2>Home page</h2> 
       <BrowserRouter>
         <Routes>
-          <Route path="/Register" exact element={<Register/>} />
-          <Route path="/Login" exact element={<Login/>} />
+          <Route path="/register" exact element={<Register/>} />
+          <Route path="/login" exact element={<Login/>} />
+          <Route path="/contacts" exact element={<Contacts/>} />
         </Routes>
-      </BrowserRouter> */}
-      <Context/>
+      </BrowserRouter>
     </div>
   )
 }

@@ -2,34 +2,27 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 
 const Context = () => {
 
-    const [todo, settodo] = useState({
+    const [data, setdata] = useState({
         name : "",
         email : ""
     })
 
-    const [data, setdata] = useState([])
-
-    const handler = (e) => {
-        settodo( (prev) =>{
-            return  {...prev, [e.target.name]:e.target.value} })
-        }
-    
-
-
-    const subhandler = (e) =>{
-        e.preventDefault()
-        // setdata([...data, todo])
-        // settodo("")
-        console.log(todo);
+    const handler =(e) =>{
+        setdata( prev =>{
+            return { ...prev, [e.target.name] : e.target.value }
+        } )
     }
 
-
+    const subhandler =(e) =>{
+        e.preventDefault();
+        console.log(data);
+    }
 
     return(
         <div>
             <form onSubmit={subhandler} >
-                <input type='text' placeholder='Name' name='name' value={todo.name}  onChange={handler} />
-                <input type='text' placeholder='Email' name='email' value={todo.email}  onChange={handler} />
+                <input type='text' placeholder='Name' name='name' value={data.name} onChange={handler}  />
+                <input type='text' placeholder='Email' name='email' value={data.email} onChange={handler} />
                 <button>Submit</button>
             </form>
  
