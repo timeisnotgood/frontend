@@ -14,6 +14,7 @@ const Contacts = () => {
             return { ...prev, [e.target.name] : e.target.value}
         } )
     }
+
     const subhandler = async (e) =>{
         e.preventDefault();
 
@@ -28,6 +29,7 @@ const Contacts = () => {
         const da = await res.json()
         console.log(da);
     }
+
   return (
     <div>
         <form onSubmit={subhandler} >

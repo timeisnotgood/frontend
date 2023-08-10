@@ -10,11 +10,23 @@ const DisplayContact = () => {
         .then( data =>{
             setserver(data)
         } )
-        console.log(server);
     }
+
+
   return (
     <div>
         <button onClick={fetchfun} >Fetch</button>
+        <ul>
+        {server.map( field => (
+          <li key={field._id} >{field.name}
+          <button onClick={() =>{
+            setserver(server.filter( item =>
+        item._id !== field._id
+        ))
+          }} >Delete</button>
+          </li>
+        ) )}
+        </ul>
     </div>
   )
 }
