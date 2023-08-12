@@ -1,19 +1,21 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Contacts from "./pages/Contacts"
 
 export default function App() {
   return(
-    <div>
+    <div  >
       <h2>Home page</h2> 
-      <BrowserRouter>
+      <Link to={'/register'} >register</Link>
+      <Link to={'/login'} >Login</Link>
+      <Link to={'/'} >home</Link>
         <Routes>
+          <Route path="/"  />
           <Route path="/register" exact element={<Register/>} />
           <Route path="/login" exact element={<Login/>} />
           <Route path="/contacts" exact element={<Contacts/>} />
         </Routes>
-      </BrowserRouter>
     </div>
   )
 }

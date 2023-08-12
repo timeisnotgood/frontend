@@ -1,9 +1,9 @@
 import React, { useState }  from 'react'
+import "./css/login.css"
 
 const Login = () => {
 
     const [data, setdata] = useState({ email : "", password : ""})
-      const [info, setinfo] = useState([])
     
       const datahandler = (e) =>{
         setdata({...data, [e.target.name]:e.target.value})
@@ -15,18 +15,17 @@ const Login = () => {
       const subhandler = async (e) =>{
     
         e.preventDefault()
-        setinfo([...info, data])
         setdata({email:"", password:""})
-        console.log(info);
+        console.log(data);
     
-        const res = await fetch('http://localhost:5000/login',{
-          method: 'GET',
+        const res = await fetch('http://localhost:5000/userdata',{
+          method: 'POST',
+          headers :{
+            'Content-type' : 'application/json'
+          },
+          body:JSON.stringify(data)
         })
-        const da = res.json()
-        da.then( data =>{
-          console.log(data);
-        } )
-
+          console.log(res.json());
       }
 
 
@@ -34,7 +33,7 @@ const Login = () => {
 
       return (
         <div className="main" >
-          <h4>Register Here</h4>
+          <h4>Login Here</h4>
           <form className="form" onSubmit={subhandler} >
             <input type="text" value={data.email} name="email" placeholder="Email" onChange={datahandler} />
             <input type="text" value={data.password} name="password" placeholder="Password" onChange={datahandler} />
