@@ -7,25 +7,24 @@ const Register = () => {
         email : "",
         password : ""
       })
-      const [info, setinfo] = useState([])
     
+      //Input Handler
       const datahandler = (e) =>{
         setdata({...data, [e.target.name]:e.target.value})
       }
     
+      // Submit Handler
       const subhandler = async (e) =>{
     
         e.preventDefault()
-        setinfo([...info, data])
-        setdata({name : "", email:"", password:""})
-    
+        console.log(data);
     
         const response = await fetch('http://localhost:5000/register', {
           method: 'POST',
           headers: {
             'Content-type' : 'application/json'
           },
-          body: JSON.stringify(info)
+          body: JSON.stringify(data)
         })
 
 
@@ -33,6 +32,9 @@ const Register = () => {
         da.then( data =>{
           console.log(data);
         })
+
+        setdata({name : "", email:"", password:""})
+
     
       }
     
