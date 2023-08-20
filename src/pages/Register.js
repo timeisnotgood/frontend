@@ -1,7 +1,10 @@
 import React, { useState }  from 'react'
+import { useHistory } from 'react-router-dom'
+
 
 const Register = () => {
 
+  const history = useHistory()
     const [data, setdata] = useState({
         name : "",
         email : "",
@@ -30,7 +33,9 @@ const Register = () => {
 
         const da = response.json()
         da.then( data =>{
-          console.log(data);
+          if(data){
+            history.push('/login')
+          }
         })
 
         setdata({name : "", email:"", password:""})

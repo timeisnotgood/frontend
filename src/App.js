@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Contacts from "./pages/Contacts"
+import Dashboard from "./pages/Dashboard"
 
 export default function App() {
   return(
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/register" exact element={<Register/>} />
           <Route path="/login" exact element={<Login/>} />
           <Route path="/contacts" exact element={<Contacts/>} />
+          <Route path="/dashboard" exact element={<Dashboard/>} />
         </Routes>
     </div>
   )
