@@ -34,7 +34,14 @@ const Login = () => {
         })
           const datas = res.json()
           .then( da =>{
-            setloggedin({status : da.status, name : da.name})
+            console.log(da);
+            if(da.accesstoken){
+              alert("Login successful")
+              window.location.href ='/contacts'
+            }else{
+              alert("Pleace Login")
+            }
+            // setloggedin({status : da.status, name : da.name})
           } )
       }
 
