@@ -15,8 +15,8 @@ export default function App() {
           <Route path="/"  />
           <Route path="/register" exact element={<Register/>} />
           <Route path="/login" exact element={<Login/>} />
-          <Route path="/contacts" exact element={<Contacts/>} />
-          <Route path="/dashboard" exact element={<Dashboard/>} />
+          <Route path="/contacts" exact element={<Dashboard/>} />
+          {/* <Route path="/dashboard" exact element={<Dashboard/>} /> */}
         </Routes>
     </div>
   )

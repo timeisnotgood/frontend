@@ -1,22 +1,27 @@
 import React, { useEffect } from 'react'
-import  Jwt  from 'jsonwebtoken'
-import { unstable_HistoryRouter } from 'react-router-dom'
+import jwt_decode from "jwt-decode";
 
 const Dashboard = () => {
 
     async function popularQuote(){
-        
+        const req = await fetch('http://localhost:5000/contacts', {
+            headers:{
+                'X-Access-Token' : localStorage.getItem('accesstoken')
+            }
+        })
+
+        const data = await req.json()
+        console.log(data);
     } 
 
     useEffect(()=>{
         const token = localStorage.getItem("accesstoken")
         if(token){
-            const  user = Jwt.decode(token)
+            const  user = jwt_decode(token)
             if(!user){
                 localStorage.removeItem('token')
                 window.location.href = '/login'
             }
-        }else{
             popularQuote()
         }
     }, [])

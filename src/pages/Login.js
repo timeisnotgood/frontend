@@ -1,11 +1,9 @@
 import React, { useState }  from 'react'
 import "./css/login.css"
-import { useHistory } from 'react-router-dom'
 
 
 const Login = () => {
 
-  const history = useHistory()
     const [data, setdata] = useState({ email : "", password : ""})
     const [loggedin, setloggedin] = useState(
       {
@@ -41,7 +39,7 @@ const Login = () => {
             if(da.accesstoken){
               localStorage.setItem("accesstoken", JSON.stringify(da.accesstoken))
               alert("Login successful")
-              history.push('/dashboard')
+              window.location.href="/contacts"
             }else{
               alert("Pleace Login")
             }
