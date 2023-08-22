@@ -1,31 +1,33 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
+import { v4 as uuidv4 } from "uuid"
 
 const Context = () => {
 
-    const [data, setdata] = useState({
-        name : "",
-        email : ""
-    })
+    const [data, setdata] = useState("")
+    const [todos, settodos] = useState([])
 
-    const handler =(e) =>{
-        setdata( prev =>{
-            return { ...prev, [e.target.name] : e.target.value }
-        } )
+    const subhandler =(e)=>{
+        e.preventDefault()
+        settodos([...todos,  data])
+        console.log(todos);
     }
 
-    const subhandler =(e) =>{
-        e.preventDefault();
-        console.log(data);
-    }
+    const checked = todos.map( todo =>{
+        return(
+            <div key={uuidv4()} >
+                <p>{todo}</p>
+            </div>
+        )
+    } )
+
 
     return(
         <div>
-            <form onSubmit={subhandler} >
-                <input type='text' placeholder='Name' name='name' value={data.name} onChange={handler}  />
-                <input type='text' placeholder='Email' name='email' value={data.email} onChange={handler} />
-                <button>Submit</button>
-            </form>
- 
+        <form onSubmit={subhandler} >
+            <input type='text' onChange={(e)=>setdata(e.target.value)} />
+            <button>Submit</button>
+        </form>
+        {checked}
         </div>
     )
 }

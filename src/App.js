@@ -3,12 +3,13 @@ import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Contacts from "./pages/Contacts"
 import Dashboard from "./pages/Dashboard"
+import Context from "./Context"
 
 export default function App() {
   return(
     <div  >
       <h2>Home page</h2> 
-      <Link to={'/register'} >register</Link>
+      {/* <Link to={'/register'} >register</Link>
       <Link to={'/login'} >Login</Link>
       <Link to={'/'} >home</Link>
         <Routes>
@@ -16,8 +17,9 @@ export default function App() {
           <Route path="/register" exact element={<Register/>} />
           <Route path="/login" exact element={<Login/>} />
           <Route path="/contacts" exact element={<Dashboard/>} />
-          {/* <Route path="/dashboard" exact element={<Dashboard/>} /> */}
-        </Routes>
+          <Route path="/dashboard" exact element={<Dashboard/>} />
+        </Routes> */}
+        <Context/>
     </div>
   )
 }
