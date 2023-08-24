@@ -10,13 +10,15 @@ const Contact = () => {
     const getdata = (contact)=>{
         setglobal([...global, contact])
     }
-    
+    console.log(global);
     return(
         <div>
+        hellow
         <Routes>
-            <Route path='/addcontacts' exact element={<Addcontacts getdata={getdata} />} />
-            <Route path='/contacts' exact element={<Contatclist list={global} />} />
+            <Route path='/addcontacts' exact Component={()=>(<Addcontacts getdata={getdata} />)} />
+            
         </Routes>
+        <Contatclist list={global} />
         </div>
     )
 }
