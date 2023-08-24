@@ -2,18 +2,15 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Contact from "./page/Contact"
 import Contatclist from "./page/Contatclist"
 import Contactdetail from "./page/Contactdetail"
+import { useContext, useState } from "react"
 
 
 
 export default function App() {
+  const [listdata, setlistdata] = useState([])
   return(
     <div  >
-      <h2>Home page</h2> 
-      <Routes>
-        <Route path="/contact" exact element={<Contact/>} />
-        <Route path="/contactlist" exact element={<Contatclist/>} />
-        <Route path="/contactdetail" exact element={<Contactdetail/>} />
-      </Routes>
+    <Contact/>
     </div>
   )
 }

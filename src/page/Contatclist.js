@@ -1,7 +1,8 @@
 import React from 'react'
 
-const Contatclist = (props) => {
-    console.log(props);
+const Contatclist = ({list}) => {
+  
+    console.log(list);
   return (
     <div>Contatclist</div>
   )
