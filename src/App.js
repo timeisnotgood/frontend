@@ -7,7 +7,6 @@ import { useContext, useState } from "react"
 
 
 export default function App() {
-  const [listdata, setlistdata] = useState([])
   return(
     <div  >
     <Contact/>

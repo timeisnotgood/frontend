@@ -27,6 +27,7 @@ const Addcontacts = ({getdata}) => {
         })
         const data = await res.json()
         // setserverdata([...serverdata, data.data])
+        console.log(data.data);
         getdata(data.data)
         setinfo({name : "", email:"", number:""})
     }
