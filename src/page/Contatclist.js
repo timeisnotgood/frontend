@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Contatclist = ({list}) => {
-  console.log(list);
+const Contatclist = (props) => {
+  console.log(props);
   // const names = list.map( name =>{
   //   return(
   //     <div key={name._id} >
