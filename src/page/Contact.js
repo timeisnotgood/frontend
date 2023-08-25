@@ -15,11 +15,9 @@ const Contact = () => {
         <div>
         hellow
         <Routes>
-        <Route path='/contact' Component={()=>(<Contatclist list={["hellow", "sdf"]} />)} />
-            <Route path='/addcontacts' exact Component={()=>(<Addcontacts getdata={getdata} />)} />
-            
+            {/* <Route path='/contactlist'  Component={()=>(<Contatclist list={global} />)} /> */}
+            <Route path='/addcontacts' exact element={<Addcontacts getdata={getdata} />} />
         </Routes>
-        <Contatclist list={global} />
         </div>
     )
 }
