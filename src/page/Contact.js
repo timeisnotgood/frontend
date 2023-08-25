@@ -3,6 +3,7 @@ import Addcontacts from './Addcontacts'
 import Contatclist from './Contatclist'
 import Contactdetail from './Contactdetail'
 import { Route, Routes } from 'react-router-dom'
+import Home from './Home'
 
 const Contact = () => {
 
@@ -13,11 +14,11 @@ const Contact = () => {
     console.log(global);
     return(
         <div>
-        hellow
-        <Routes>
-            {/* <Route path='/contactlist'  Component={()=>(<Contatclist list={global} />)} /> */}
-            <Route path='/addcontacts' exact element={<Addcontacts getdata={getdata} />} />
-        </Routes>
+            <Routes>
+                <Route path='/' element={<Home global={global} />} />
+                <Route path='/contactlist'  element={<Contatclist list={global} />} />
+                <Route path='/addcontacts' exact element={<Addcontacts getdata={getdata} />} />
+            </Routes>
         </div>
     )
 }
