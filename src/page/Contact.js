@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
 import Addcontacts from './Addcontacts'
 import Contatclist from './Contatclist'
-import Contactdetail from './Contactdetail'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
+import Navlink from './Navlink'
 
 const Contact = () => {
 
@@ -13,13 +13,14 @@ const Contact = () => {
     }
     console.log(global);
     return(
-        <div>
+        <>
+            <Navlink/>
             <Routes>
                 <Route path='/' element={<Home global={global} />} />
                 <Route path='/contactlist'  element={<Contatclist list={global} />} />
                 <Route path='/addcontacts' exact element={<Addcontacts getdata={getdata} />} />
             </Routes>
-        </div>
+        </>
     )
 }
 
