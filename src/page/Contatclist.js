@@ -1,30 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Contatclist = ({list}) => {
+const Contatclist = () => {
   
-  const deletehandler =async (id)=>{
-    console.log(id);
-    const data = await fetch('http://localhost:5000/contact', {
-      method : "DELETE",
-      headers:{
-        'Content-type' : 'application/json'
-      },
-      body:JSON.stringify(id)
-    })
-  }
+  const [list, setlist] = useState([])
 
+ useEffect(async()=>{
+  const data = await fetch('http://127.0.0.1:5000/findcontact', {
+      method : "GET",
+      headers:{
+        'Content-Type': 'application/json', // Specify content type
+    },
+    })
+    const res = await data.json()
+    setlist([...list, res])
+ },[])
+ 
+ console.log(list);
   return (
     <div>
-      {list.map( name =>{
-    return(
-      <div key={name._id} >
-        <p>
-          {name.name}
-          <button onClick={()=>deletehandler(name._id)} >Delete</button>
-        </p>
-      </div>
-    )
-  } )}
+    hai
     </div>
   )
 }

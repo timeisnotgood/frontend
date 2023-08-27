@@ -18,7 +18,7 @@ const Addcontacts = ({getdata}) => {
     // Form Handler
     const subhandler =async(e)=>{
         e.preventDefault()
-        const res = await fetch('http://localhost:5000/contact', {
+        const res = await fetch('http://127.0.0.1:5000/addcontact', {
             method :"POST",
             headers :{
                 'Content-type' : 'application/json'

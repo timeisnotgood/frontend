@@ -17,7 +17,7 @@ const Contact = () => {
             <Navlink/>
             <Routes>
                 <Route path='/' element={<Home global={global} />} />
-                <Route path='/contactlist'  element={<Contatclist list={global} />} />
+                <Route path='/contactlist'  element={<Contatclist  />} />
                 <Route path='/addcontacts' exact element={<Addcontacts getdata={getdata} />} />
             </Routes>
         </>
