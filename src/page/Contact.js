@@ -11,7 +11,6 @@ const Contact = () => {
     const getdata = (contact)=>{
         setglobal([...global, contact])
     }
-    console.log(global);
     return(
         <>
             <Navlink/>
