@@ -25,8 +25,8 @@ const Contatclist = () => {
     method : "DELETE",
     headers:{
       'Content-Type': 'application/json', // Specify content type
-  },
-  body:JSON.stringify(a)
+    },
+    body:JSON.stringify({id:a._id})
   })
 
   const res = await data.json()
