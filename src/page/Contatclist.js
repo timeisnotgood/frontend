@@ -30,7 +30,8 @@ const Contatclist = () => {
   })
 
   const res = await data.json()
-  console.log(res);
+  console.log(res.data);
+  setlist(res.data)
 }
 
 
