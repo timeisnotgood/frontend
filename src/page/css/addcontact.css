@@ -1,0 +1,36 @@
+.addform{
+    width: 400px;
+    height: 250px;
+    margin-left: 300px;
+    padding: 0;
+}
+
+.form{
+    width: 250px;
+    height: 250px;
+    display: flex; 
+    flex-direction: column; 
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 6px;
+    background-color: green;
+   
+}
+
+.input{
+    width: 200px;
+    height: 25px;
+    display: inline;
+    outline: none;
+    border-radius: 6px;
+    border: none;
+    padding: 15px;
+}
+.btn{
+    width: 70px;
+    height: 40px;
+    background-color: greenyellow;
+    border-radius: 6px;
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import "./css/listcontact.css"
 
 const Contatclist = () => {
   
@@ -40,12 +40,12 @@ const Contatclist = () => {
 
  const data = list.map( data =>{
   return(
-    <div key={data._id} >
-      <p>{data.name}</p>
+    <div key={data._id} className='out' >
+      <p className='name' >{data.name}</p>
       <Link to={`/editcontact/${data._id}`} >
-        <button>Edit</button>
+        <button className='btn' >Edit</button>
       </Link>
-      <button onClick={()=>dele(data._id)} >Delete</button> 
+      <button className='btn' onClick={()=>dele(data._id)} >Delete</button> 
     </div>
   )
  } )

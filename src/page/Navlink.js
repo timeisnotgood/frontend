@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import "./css/navlink.css"
 
 const Navlink = () => {
   return (
-    <div>
+    <div className='navbar' >
+        <div className='nav' >
         <Link to='/' >
             Home
         </Link>
@@ -13,9 +15,7 @@ const Navlink = () => {
         <Link to='/contactlist' >
             contactslist
         </Link>
-        <Link to='/editcontact' >
-            Editcontact
-        </Link>
+        </div>
     </div>
   )
 }

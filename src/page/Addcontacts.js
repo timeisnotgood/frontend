@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./css/addcontact.css"
 
 const Addcontacts = ({getdata}) => {
     const [info, setinfo] = useState({
@@ -33,12 +34,12 @@ const Addcontacts = ({getdata}) => {
     }
 
   return (
-    <div>
-        <form onSubmit={subhandler} >
-            <input type='text' placeholder='name' name='name' onChange={handler} />
-            <input type='text' placeholder='email' name='email' onChange={handler} />
-            <input type='text' placeholder='number' name='number' onChange={handler} />
-            <button>Submit</button>
+    <div className='addform' >
+        <form onSubmit={subhandler} className='form' >
+            <input type='text' placeholder='name' className='input' name='name' onChange={handler} />
+            <input type='text' placeholder='email' className='input' name='email' onChange={handler} />
+            <input type='text' placeholder='number' className='input' name='number' onChange={handler} />
+            <button className='btn' >Submit</button>
         </form>
     </div>
   )

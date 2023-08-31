@@ -1,0 +1,18 @@
+.home{
+    height: 250px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome{
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    color: cadetblue;
+}
+
+.welcomein{
+    color: orange;
+}

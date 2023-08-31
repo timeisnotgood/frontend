@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
+import "./css/edit.css"
 
 
 const Editcontact = () => {
@@ -32,12 +33,12 @@ const Editcontact = () => {
   }
   
   return (
-    <div>
-      <form onSubmit={subhandler} >
-        <input type='text' placeholder='name' name='name' onChange={handler} />
-        <input type='text' placeholder='email' name='email' onChange={handler} />
-        <input type='text' placeholder='number' name='number' onChange={handler} />
-        <button>Submit Changes</button>
+    <div className='div' >
+      <form onSubmit={subhandler} className='form' >
+        <input type='text' placeholder='name' className='input' name='name' onChange={handler} />
+        <input type='text' placeholder='email' className='input' name='email' onChange={handler} />
+        <input type='text' placeholder='number' className='input' name='number' onChange={handler} />
+        <button className='btn' >Submit Changes</button>
       </form>
     </div>
   )
