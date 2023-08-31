@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+
 
 const Contatclist = () => {
   
@@ -40,7 +42,9 @@ const Contatclist = () => {
   return(
     <div key={data._id} >
       <p>{data.name}</p>
-      <button>Edit</button>
+      <Link to={`/editcontact/${data._id}`} >
+        <button>Edit</button>
+      </Link>
       <button onClick={()=>dele(data._id)} >Delete</button> 
     </div>
   )

@@ -13,6 +13,9 @@ const Navlink = () => {
         <Link to='/contactlist' >
             contactslist
         </Link>
+        <Link to='/editcontact' >
+            Editcontact
+        </Link>
     </div>
   )
 }
