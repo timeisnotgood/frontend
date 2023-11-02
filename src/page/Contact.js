@@ -5,6 +5,7 @@ import Editcontact from './Editcontact'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Navlink from './Navlink'
+import Register from './Register'
 
 const Contact = () => {
 
@@ -17,6 +18,7 @@ const Contact = () => {
             <Navlink/>
             <Routes>
                 <Route path='/' element={<Home global={global} />} />
+                <Route path='/register' element={<Register/>} />
                 <Route path='/contactlist'  element={<Contatclist  />} />
                 <Route path='/addcontacts' exact element={<Addcontacts getdata={getdata} />} />
                 <Route path='/editcontact/:id' element={<Editcontact/>} />

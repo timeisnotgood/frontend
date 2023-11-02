@@ -9,6 +9,9 @@ const Navlink = () => {
         <Link to='/' >
             Home
         </Link>
+        <Link to='/register' >
+          Register
+        </Link>
         <Link to='/addcontacts' >
             Addcontacts
         </Link>
